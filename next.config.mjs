@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
-    domains: ['avatars.githubusercontent.com', 'images.unsplash.com']
+    domains: [
+      'avatars.githubusercontent.com',
+      'images.unsplash.com',
+      'www.gravatar.com',
+      'www.themoviedb.org'
+    ]
   },
   experimental: {
     fontLoaders: [

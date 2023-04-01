@@ -5,16 +5,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const url = `${getApiURL(
-    'development'
-  )}/authentication/token/validate_with_login?api_key=${
+  const url = `${getApiURL('development')}/authentication/token/new?api_key=${
     process.env.NEXT_PUBLIC_API_KEY
   }`
   if (url) {
     try {
       const result = await fetch(url, {
-        method: 'POST',
-        body: req.body,
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         }

@@ -5,11 +5,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const url = `${getApiURL(
-    'development'
-  )}/authentication/token/validate_with_login?api_key=${
+  const url = `${getApiURL('development')}/authentication/session/new?api_key=${
     process.env.NEXT_PUBLIC_API_KEY
   }`
+  console.log('url', url)
+  console.log('req', req.body)
   if (url) {
     try {
       const result = await fetch(url, {
